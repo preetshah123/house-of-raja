@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "composite": true,                           /* Add this line */
+    "tsBuildInfoFile": "./node_modules/.bin/tsconfig.node.tsbuildinfo",
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    
+    /* Remove "noEmit": true and use this instead */
+    "emitDeclarationOnly": true,                 
+
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["vite.config.ts"]
+}
