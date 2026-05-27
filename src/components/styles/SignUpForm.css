@@ -13,6 +13,7 @@
   font-weight: bold;
   text-align: center;
   padding-bottom: 1rem;
+  font-family: 'Regulator Nova', sans-serif;
 }
 
 .form-group {
@@ -22,15 +23,19 @@
 .form-input {
   width: 100%;
   padding: 0.5rem 0.75rem;
-  background-color: var(--color-white-80);
+  background-color: #fff;
   border: 1px solid var(--color-yellow);
   border-radius: 0.5rem;
   font-size: 1rem;
   transition: all 0.3s ease-in-out;
+  color: var(--color-maroon);
+  font-weight: 700;
 }
 
 .form-input::placeholder {
-  color: black;
+  color: var(--color-green);
+  font-weight: 400 !important;
+  font-size: 0.8rem;
 }
  
 .form-input:focus {
@@ -47,20 +52,22 @@
 
 .form-submit-btn {
   width: 100%;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--color-green);
-  color: var(--color-white);
-  font-weight: 600;
-  border: none;
-  border-radius: 0.5rem;
+  line-height: 21px;
+  background-color: var(--color-yellow);
+  border-radius: 119px;
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  color: var(--color-maroon);
+  font-size: 0.75rem;
+  letter-spacing: 0px;
+  text-align: center;
+  text-indent: 0px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  box-shadow: var(--shadow-lg);
 }
 
 .form-submit-btn:hover:not(:disabled) {
-  background-color: rgba(131, 141, 65, 0.9);
-  transform: scale(1.02);
+  filter: brightness(0.95)
 }
 
 .form-submit-btn:active:not(:disabled) {
@@ -84,12 +91,12 @@
 
 .form-success {
   padding: 0.75rem;
-  background-color: var(--color-green-100);
-  border: 1px solid var(--color-green-300);
+  background-color: var(--color-yellow);
   border-radius: 0.5rem;
-  color: var(--color-green-800);
+  color: var(--color-green);
   font-size: 0.875rem;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 /* Mobile responsive */

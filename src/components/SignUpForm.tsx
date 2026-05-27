@@ -48,61 +48,66 @@ export const SignUpForm = () => {
           Get in early.
         </h2>
 
+        {/* Error Messages */}
+        {(validationError || error) && (
+          <div className="form-error">
+            {validationError || error}
+          </div>
+        )}
+
+        {/* Success Message */}
+        {success && (
+          <div className="form-success">
+            ✓ Thank you! You're in.
+          </div>
+        )}
+
         {/* Form */}
-        <form onSubmit={handleSubmit}>
-          {/* Name Input */}
-          <div className="form-group">
-            <input
-              id="name"
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Name"
-              disabled={loading}
-              className="form-input"
-              required
-            />
-          </div>
-
-          {/* Email Input */}
-          <div className="form-group">
-            <input
-              id="email"
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Email"
-              disabled={loading}
-              className="form-input"
-              required
-            />
-          </div>
-
-          {/* Error Messages */}
-          {(validationError || error) && (
-            <div className="form-error">
-              {validationError || error}
+        {!success && !error && !validationError && (
+          <form onSubmit={handleSubmit}>
+            {/* Name Input */}
+            <div className="form-group">
+              <input
+                id="name"
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Name"
+                disabled={loading}
+                className="form-input"
+                required
+              />
             </div>
-          )}
 
-          {/* Success Message */}
-          {success && (
-            <div className="form-success">
-              ✓ Thank you! You're in.
+            {/* Email Input */}
+            <div className="form-group">
+              <input
+                id="email"
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email"
+                disabled={loading}
+                className="form-input"
+                required
+              />
             </div>
-          )}
 
-          {/* Submit Button */}
-          <button
-            type="submit"
-            disabled={loading || success}
-            className="form-submit-btn"
-          >
-            {loading ? 'Submitting...' : 'I want in.'}
-          </button>
-        </form>
+            {/* Submit Button */}
+            <button
+              type="submit"
+              disabled={loading || success}
+              className="form-submit-btn"
+            >
+              {loading ? 'Submitting...' : 'I want in.'}
+            </button>
+          </form>
+        )
+
+        }
+        
       </div>
     </div>
   );

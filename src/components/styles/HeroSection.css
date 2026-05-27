@@ -19,19 +19,26 @@
 
 .hero-heading {
   font-size: 2rem;
-  line-height: 1;
+  line-height: 39px;
   font-weight: 700;
   margin: 0;
   margin-bottom: 0.75rem;
+  font-family: 'Regulator Nova', sans-serif;
+  font-weight: 700;
 }
 
 .subtext {
 	font-size: 1.25rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .italics {
 	font-size: 1rem;
 	font-style: italic;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
 }
 
 /* Responsive design for tablet and smaller screens */
