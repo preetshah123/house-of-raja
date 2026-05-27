@@ -49,15 +49,13 @@
 }
 
 /* Desktop screens */
-/* @media (min-width: 768px) {
+@media (min-width: 769px) {
   .sticky-logo-image {
-    height: 96px;
+    width: 120px;
+    height: 110px;
   }
-} */
-
-/* Mobile and tablet */
-/* @media (max-width: 768px) {
-  .sticky-logo-image {
-    height: 64px;
+  
+  .text {
+    font-size: 12px;
   }
-} */
+}
