@@ -13,7 +13,7 @@ interface CloudPosition {
   customClass?: string;
 }
 
-const FIXED_CLOUDS: CloudPosition[] = [
+const FIXED_CLOUDS_DESKTOP: CloudPosition[] = [
   // Top Left Edge Cluster (Pushed further on scroll)
   { id: 'cloud-top-left-1',  x: '-5vw',  y: '-45vh', image: cloud1, maxDeltaY: 120, customClass: 'cloud-huge' },
   { id: 'cloud-mid-left-1',  x: '-10vw', y: '27vh',  image: cloud2, maxDeltaY: 80,  customClass: 'cloud-medium' },
@@ -27,9 +27,29 @@ const FIXED_CLOUDS: CloudPosition[] = [
   { id: 'cloud-bot-right',   x: '55vw',  y: '65vh',  image: cloud2, maxDeltaY: 450,  customClass: 'cloud-massive' },
 ];
 
+// Mobile optimized cloud positions - further apart and higher up to avoid text
+const FIXED_CLOUDS_MOBILE: CloudPosition[] = [
+  // Top Left Edge Cluster - moved further left and up
+  { id: 'cloud-top-left-1',  x: '-15vw',  y: '-25vh', image: cloud1, maxDeltaY: 100, customClass: 'cloud-huge' },
+  { id: 'cloud-mid-left-1',  x: '-20vw', y: '10vh',  image: cloud2, maxDeltaY: 60,  customClass: 'cloud-medium' },
+  
+  // Top Right Edge Cluster - moved further right and up
+  { id: 'cloud-top-right-1', x: '85vw',  y: '-15vh',  image: cloud2, maxDeltaY: 80, customClass: 'cloud-large' },
+  { id: 'cloud-mid-right-1', x: '95vw',  y: '5vh',  image: cloud1, maxDeltaY: 70,  customClass: 'cloud-medium' },
+  
+  // Bottom Corner Framers - adjusted for mobile spacing
+  { id: 'cloud-bot-left',    x: '-10vw',  y: '60vh',  image: cloud1, maxDeltaY: 150,  customClass: 'cloud-massive' },
+  { id: 'cloud-bot-right',   x: '70vw',  y: '10vh',  image: cloud2, maxDeltaY: 350,  customClass: 'cloud-massive' },
+];
+
+const getCloudPositions = (isMobile: boolean): CloudPosition[] => {
+  return isMobile ? FIXED_CLOUDS_MOBILE : FIXED_CLOUDS_DESKTOP;
+};
+
 export const CloudLayer = ({ children }: CloudLayerProps) => {
   // Track progress as a percentage multiplier (0 at top, 1 at bottom)
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 650);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,21 +67,28 @@ export const CloudLayer = ({ children }: CloudLayerProps) => {
       setScrollProgress(progress);
     };
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 650);
+      handleScroll();
+    };
+
     handleScroll();
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll);
+    window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const cloudPositions = getCloudPositions(isMobile);
 
   return (
     <div className="cloud-layer">
       <div className="cloud-background-canvas">
-        {FIXED_CLOUDS.map((cloud) => {
+        {cloudPositions.map((cloud) => {
           // Multiply this cloud's custom distance limit by the global scroll completion ratio
           const currentTranslateY = scrollProgress * cloud.maxDeltaY;
 

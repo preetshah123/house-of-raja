@@ -57,9 +57,25 @@
   max-width: 999px;
 }
 
-/* Responsive adjustment for clean mobile scaling */
-/* @media (max-width: 768px) {
-  .cloud-medium { width: 55vw; }
-  .cloud-large  { width: 70vw; }
-  .cloud-massive { width: 90vw; }
-} */
+/* Responsive adjustment for mobile - larger clouds to maintain visual balance */
+@media (max-width: 650) {
+  .cloud-medium { 
+    width: 50vw;
+    max-width: 350px;
+  }
+  
+  .cloud-large  { 
+    width: 60vw;
+    max-width: 450px;
+  }
+  
+  .cloud-massive { 
+    width: 75vw;
+    max-width: 600px;
+  }
+  
+  .cloud-huge {
+    width: 90vw;
+    max-width: 700px;
+  }
+}

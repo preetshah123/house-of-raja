@@ -7,8 +7,23 @@ export const StickyLogo = () => {
     scale: 1,
     translateY: 0,
   });
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [maxTranslateY, setMaxTranslateY] = useState(220);
 
   useEffect(() => {
+    const calculateMaxTranslateY = () => {
+      const viewportHeight = window.innerHeight;
+      
+      // Determine desired distance from bottom based on screen size
+      // On mobile, give more breathing room; on desktop, less
+      const isMobileScreen = window.innerWidth <= 768;
+
+      const calculatedMaxTranslateY = viewportHeight * 0.25;
+      
+      setMaxTranslateY(calculatedMaxTranslateY);
+      setIsMobile(isMobileScreen);
+    };
+
     const handleScroll = () => {
       const scrollY = window.scrollY;
       
@@ -23,9 +38,8 @@ export const StickyLogo = () => {
       // Calculate progress ratio (exactly 0 at top, exactly 1 at the absolute bottom)
       const progress = Math.min(scrollY / maxScrollableDepth, 1);
 
-      // Animation Targets
-      const minScale = 0.80;      // Shrinks down to 80% size at the bottom
-      const maxTranslateY = 150;   // Moves 50px lower at the bottom
+      // Animation Targets - scale adjustment based on screen size
+      const minScale = isMobile ? 0.75 : 0.80;
 
       // Interpolate values based on your scroll percentage
       const currentScale = 1 - (progress * (1 - minScale));
@@ -37,25 +51,30 @@ export const StickyLogo = () => {
       });
     };
 
-    // Run once on mount to establish correct sizing if page loads pre-scrolled
+    const handleResize = () => {
+      calculateMaxTranslateY();
+      handleScroll();
+    };
+
+    // Calculate on mount
+    calculateMaxTranslateY();
     handleScroll();
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    // Re-calculate if the user resizes their window (changes layout boundaries)
-    window.addEventListener('resize', handleScroll);
+    window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [isMobile, maxTranslateY]);
 
   return (
     <div className="sticky-logo-wrapper">
       <div 
         className="sticky-logo-container"
         style={{
-          transform: `translateY(${transformStyles.translateY}px) scale(${transformStyles.scale})`,
+          transform: `translateY(${transformStyles.translateY}px)`,
         }}
       >
         <img
