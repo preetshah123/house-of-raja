@@ -1,0 +1,62 @@
+/* StickyLogo.css */
+@import '../../styles/colors.css';
+
+.sticky-logo-wrapper {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  height: 0;
+  pointer-events: none;
+}
+
+.sticky-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  flex-direction: column;
+  pointer-events: auto;
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+.text {
+  color: var(--color-maroon);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  transition: transform 0.1s ease-out;
+}
+
+.sticky-logo-wrapper.is-sticky {
+  position: sticky;
+  top: 0;
+}
+
+.sticky-logo-wrapper.is-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.sticky-logo-image {
+  width: 120px;
+  height: 110px;
+  transition: transform 0.1s ease-out;
+}
+
+/* Desktop screens */
+/* @media (min-width: 768px) {
+  .sticky-logo-image {
+    height: 96px;
+  }
+} */
+
+/* Mobile and tablet */
+/* @media (max-width: 768px) {
+  .sticky-logo-image {
+    height: 64px;
+  }
+} */

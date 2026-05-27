@@ -1,0 +1,14 @@
+/* BottomBorder.css */
+@import '../../styles/colors.css';
+
+.bottom-border-wrapper {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-green);
+}
+
+.bottom-border-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
