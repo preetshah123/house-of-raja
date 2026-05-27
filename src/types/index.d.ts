@@ -25,10 +25,6 @@ export interface HeroSectionProps {
 export interface CastleSectionProps {
     children?: React.ReactNode;
 }
-export interface StickyLogoProps {
-    imageUrl?: string;
-    alt?: string;
-}
 export interface ScrollContainerProps {
     children: React.ReactNode;
 }

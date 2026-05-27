@@ -1,3 +1,3 @@
-import { StickyLogoProps } from '../types';
-export declare const StickyLogo: ({ imageUrl, alt }: StickyLogoProps) => import("react/jsx-runtime").JSX.Element;
+import './styles/StickyLogo.css';
+export declare const StickyLogo: () => import("react/jsx-runtime").JSX.Element;
 export default StickyLogo;
