@@ -1,0 +1,65 @@
+@import '../../styles/colors.css';
+
+.cloud-layer {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Isolated background canvas that handles layout translations */
+.cloud-background-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Content Container safely elevated over background graphics */
+.cloud-content-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+
+.cloud-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  object-fit: contain;
+  will-change: transform;
+  /* Smooth opacity/render initialization transition */
+  transition: opacity 0.5s ease-in-out; 
+}
+
+/* Dynamic sizing presets to replicate the look of your target screenshot */
+.cloud-medium {
+  width: 35vw;
+  max-width: 450px;
+}
+
+.cloud-large {
+  width: 45vw;
+  max-width: 600px;
+}
+
+.cloud-massive {
+  width: 60vw;
+  max-width: 850px;
+}
+
+.cloud-huge {
+  width: 80vw;
+  max-width: 999px;
+}
+
+/* Responsive adjustment for clean mobile scaling */
+/* @media (max-width: 768px) {
+  .cloud-medium { width: 55vw; }
+  .cloud-large  { width: 70vw; }
+  .cloud-massive { width: 90vw; }
+} */

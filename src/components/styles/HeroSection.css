@@ -1,0 +1,48 @@
+/* HeroSection.css */
+@import '../../styles/colors.css';
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  color: var(--color-yellow);
+	position: sticky;
+}
+
+.hero-content {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero-heading {
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 0.75rem;
+}
+
+.subtext {
+	font-size: 1.25rem;
+}
+
+.italics {
+	font-size: 1rem;
+	font-style: italic;
+}
+
+/* Responsive design for tablet and smaller screens */
+/* @media (max-width: 768px) {
+  .hero-heading {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .hero-paragraph {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+} */

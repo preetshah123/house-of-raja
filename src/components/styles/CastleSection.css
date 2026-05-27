@@ -1,0 +1,46 @@
+/* CastleSection.css */
+@import '../../styles/colors.css';
+
+.castle-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.castle-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  top: 1rem;
+}
+
+.castle-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Mobile: Show middle section of castle */
+/* @media (max-width: 768px) {
+  .castle-image {
+    object-position: center;
+  }
+} */
+
+/* Desktop: Full width castle */
+/* @media (min-width: 1024px) {
+  .castle-image {
+    object-fit: cover;
+  }
+} */
+
+.castle-form-overlay {
+  position: absolute;
+  bottom: 10rem;
+  z-index: 10;
+}

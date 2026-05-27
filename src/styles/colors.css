@@ -1,0 +1,39 @@
+/* colors.css - Global color theme variables */
+:root {
+  /* Primary Colors */
+  --color-green: #838D41;
+  --color-yellow: #FFED93;
+  --color-maroon: #6C2200;
+
+  /* Gray Scale */
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* White / Opacity Variants */
+  --color-white: #ffffff;
+  --color-white-80: rgba(255, 255, 255, 0.8);
+  --color-white-10: rgba(255, 255, 255, 0.1);
+  --color-white-20: rgba(255, 255, 255, 0.2);
+  --color-white-50: rgba(255, 255, 255, 0.5);
+  --color-white-05: rgba(255, 255, 255, 0.05);
+
+  /* Status Colors */
+  --color-red-100: #fee2e2;
+  --color-red-300: #fca5a5;
+  --color-red-800: #7f1d1d;
+  --color-green-100: #dcfce7;
+  --color-green-300: #86efac;
+  --color-green-800: #166534;
+
+  /* Shadows */
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  /* Transitions */
+  --transition-smooth: all 0.3s ease-in-out;
+
+}
