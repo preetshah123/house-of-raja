@@ -30,7 +30,7 @@ const FIXED_CLOUDS_DESKTOP: CloudPosition[] = [
 // Mobile optimized cloud positions - further apart and higher up to avoid text
 const FIXED_CLOUDS_MOBILE: CloudPosition[] = [
   // Top Left Edge Cluster - moved further left and up
-  { id: 'cloud-top-left-1',  x: '-15vw',  y: '-25vh', image: cloud1, maxDeltaY: 100, customClass: 'cloud-huge' },
+  { id: 'cloud-top-left-1',  x: '-15vw',  y: '-5vh', image: cloud1, maxDeltaY: 100, customClass: 'cloud-huge' },
   { id: 'cloud-mid-left-1',  x: '-20vw', y: '10vh',  image: cloud2, maxDeltaY: 60,  customClass: 'cloud-medium' },
   
   // Top Right Edge Cluster - moved further right and up
