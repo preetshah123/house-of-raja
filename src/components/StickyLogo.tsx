@@ -7,43 +7,32 @@ export const StickyLogo = () => {
     scale: 1,
     translateY: 0,
   });
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const [maxTranslateY, setMaxTranslateY] = useState(220);
 
   useEffect(() => {
-    const calculateMaxTranslateY = () => {
-      const viewportHeight = window.innerHeight;
-      
-      // Determine desired distance from bottom based on screen size
-      // On mobile, give more breathing room; on desktop, less
-      const isMobileScreen = window.innerWidth <= 768;
-
-      const calculatedMaxTranslateY = viewportHeight * 0.25;
-      
-      setMaxTranslateY(calculatedMaxTranslateY);
-      setIsMobile(isMobileScreen);
-    };
-
-    const handleScroll = () => {
+    const handleScrollAndResize = () => {
       const scrollY = window.scrollY;
-      
-      // Calculate the maximum scrollable height of the current page
-      const totalPageHeight = document.documentElement.scrollHeight;
       const viewportHeight = window.innerHeight;
+      const viewportWidth = window.innerWidth;
+      const totalPageHeight = document.documentElement.scrollHeight;
+      
+      const isMobileScreen = viewportWidth <= 768;
       const maxScrollableDepth = totalPageHeight - viewportHeight;
 
-      // Guard against division by zero on short pages that don't scroll
+      // Guard against division by zero on non-scrollable pages
       if (maxScrollableDepth <= 0) return;
 
-      // Calculate progress ratio (exactly 0 at top, exactly 1 at the absolute bottom)
+      // Calculate progress ratio (0 to 1)
       const progress = Math.min(scrollY / maxScrollableDepth, 1);
 
-      // Animation Targets - scale adjustment based on screen size
-      const minScale = isMobile ? 0.75 : 0.80;
+      // Determine max displacement based on active viewport scale 
+      const calculatedMaxTranslateY = viewportHeight * 0.25;
 
-      // Interpolate values based on your scroll percentage
+      // Animation Targets 
+      const minScale = isMobileScreen ? 0.75 : 0.80;
+
+      // Interpolate scale and layout drift coordinates
       const currentScale = 1 - (progress * (1 - minScale));
-      const currentTranslateY = progress * maxTranslateY;
+      const currentTranslateY = progress * calculatedMaxTranslateY;
 
       setTransformStyles({
         scale: currentScale,
@@ -51,30 +40,28 @@ export const StickyLogo = () => {
       });
     };
 
-    const handleResize = () => {
-      calculateMaxTranslateY();
-      handleScroll();
-    };
+    // Initialize layout immediately on mounting step
+    handleScrollAndResize();
 
-    // Calculate on mount
-    calculateMaxTranslateY();
-    handleScroll();
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleResize);
+    // Attach listeners with passive flag set to true for smooth mobile thread handling
+    window.addEventListener('scroll', handleScrollAndResize, { passive: true });
+    window.addEventListener('resize', handleScrollAndResize);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScrollAndResize);
+      window.removeEventListener('resize', handleScrollAndResize);
     };
-  }, [isMobile, maxTranslateY]);
+  }, []); // Leaving dependency array empty prevents event listeners from tearing down and recreation on scroll
 
   return (
     <div className="sticky-logo-wrapper">
       <div 
         className="sticky-logo-container"
         style={{
-          transform: `translateY(${transformStyles.translateY}px)`,
+          /* Using translate3d and scale together inside a single accelerated 
+            transform string completely eliminates iOS Safari rubber-banding.
+          */
+          transform: `translate3d(0, ${transformStyles.translateY}px, 0) scale(${transformStyles.scale})`,
         }}
       >
         <img

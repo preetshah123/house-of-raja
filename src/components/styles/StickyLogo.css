@@ -17,8 +17,13 @@
   padding: 1rem;
   flex-direction: column;
   pointer-events: auto;
+  
+  /* CRITICAL: Force iOS to utilize the GPU and avoid rendering micro-flashes */
   will-change: transform;
-  transition: transform 0.1s ease-out;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  
+  /* REMOVED: transition rule is deleted from here */
 }
 
 .text {
@@ -27,25 +32,13 @@
   font-style: normal;
   font-weight: 900;
   font-family: 'Regulator Nova', sans-serif;
-  transition: transform 0.1s ease-out;
-}
-
-.sticky-logo-wrapper.is-sticky {
-  position: sticky;
-  top: 0;
-}
-
-.sticky-logo-wrapper.is-fixed {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  /* REMOVED: transition rule is deleted from here */
 }
 
 .sticky-logo-image {
   width: 120px;
   height: 110px;
-  transition: transform 0.1s ease-out;
+  /* REMOVED: transition rule is deleted from here */
 }
 
 /* Desktop screens */
