@@ -22,8 +22,6 @@
   will-change: transform;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  
-  /* REMOVED: transition rule is deleted from here */
 }
 
 .text {
@@ -32,13 +30,12 @@
   font-style: normal;
   font-weight: 900;
   font-family: 'Regulator Nova', sans-serif;
-  /* REMOVED: transition rule is deleted from here */
+  margin-top: -1rem;
 }
 
 .sticky-logo-image {
   width: 120px;
   height: 110px;
-  /* REMOVED: transition rule is deleted from here */
 }
 
 /* Desktop screens */

@@ -27,7 +27,7 @@ export const StickyLogo = () => {
       const isLandScape = viewportHeight < viewportWidth
 
       // Determine max displacement based on active viewport scale 
-      const calculatedMaxTranslateY = viewportHeight * (isLandScape ? 0.15 : 0.25);
+      const calculatedMaxTranslateY = viewportHeight * (isLandScape && isMobileScreen ? 0.15 : 0.25);
 
       // Animation Targets 
       const minScale = isMobileScreen ? 0.75 : 0.80;
