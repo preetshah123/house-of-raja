@@ -51,16 +51,13 @@ export const StickyLogo = () => {
       window.removeEventListener('scroll', handleScrollAndResize);
       window.removeEventListener('resize', handleScrollAndResize);
     };
-  }, []); // Leaving dependency array empty prevents event listeners from tearing down and recreation on scroll
+  }, []);
 
   return (
     <div className="sticky-logo-wrapper">
       <div 
         className="sticky-logo-container"
         style={{
-          /* Using translate3d and scale together inside a single accelerated 
-            transform string completely eliminates iOS Safari rubber-banding.
-          */
           transform: `translate3d(0, ${transformStyles.translateY}px, 0) scale(${transformStyles.scale})`,
         }}
       >
