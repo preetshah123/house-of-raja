@@ -27,15 +27,6 @@ export const SignUpForm = () => {
 
     // Submit form
     await submit(formData);
-
-    // Clear form on success
-    if (!error) {
-      setFormData({ email: '', name: '' });
-      // Reset success message after 3 seconds
-      setTimeout(() => {
-        reset();
-      }, 3000);
-    }
   };
 
   return (
