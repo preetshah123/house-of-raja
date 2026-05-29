@@ -1,7 +1,9 @@
 import { useState, useCallback } from 'react';
-import { FormData, UseFormSubmitReturn } from '../types';
+import { type FormData, UseFormSubmitReturn } from '../types';
 
-export const useFormSubmit = (endpoint?: string): UseFormSubmitReturn => {
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzD__tDQgM8o7pF9Qg1IJhBCmVxLN-TONFzX2nYEYRPFq3vxXU3vTHlL9eXr7b5KdIoaQ/exec'
+
+export const useFormSubmit = (): UseFormSubmitReturn => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
@@ -12,43 +14,42 @@ export const useFormSubmit = (endpoint?: string): UseFormSubmitReturn => {
       setError(null);
       setSuccess(false);
 
+      console.log('trying to submit', GOOGLE_SCRIPT_URL)
+
       try {
         // If no endpoint provided, just mock the submission
-        if (!endpoint) {
+        if (!GOOGLE_SCRIPT_URL) {
           // Simulate a slight delay
           await new Promise((resolve) => setTimeout(resolve, 500));
           setSuccess(true);
           return;
         }
 
-        const response = await fetch(endpoint, {
+        const formData = new FormData();
+        console.log('check the data', data)
+        formData.append('Name', data.name);
+        formData.append('Email', data.email);
+
+        console.log('check form data', formData)
+
+        await fetch(GOOGLE_SCRIPT_URL, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
+          body: formData,
+          mode: 'no-cors',
         });
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const result = await response.json();
-
-        if (!result.success) {
-          throw new Error(result.message || 'Submission failed');
-        }
-
         setSuccess(true);
+
       } catch (err) {
         const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred';
+        console.log('error', errorMessage)
         setError(errorMessage);
         setSuccess(false);
       } finally {
         setLoading(false);
       }
     },
-    [endpoint]
+    [GOOGLE_SCRIPT_URL]
   );
 
   const reset = useCallback(() => {
