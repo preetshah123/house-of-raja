@@ -15,31 +15,31 @@ interface CloudPosition {
 
 const FIXED_CLOUDS_DESKTOP: CloudPosition[] = [
   // Top Left Edge Cluster (Pushed further on scroll)
-  { id: 'cloud-top-left-1',  x: '-5vw',  y: '-45vh', image: cloud1, maxDeltaY: 120, customClass: 'cloud-huge' },
-  { id: 'cloud-mid-left-1',  x: '-10vw', y: '27vh',  image: cloud2, maxDeltaY: 80,  customClass: 'cloud-medium' },
+  { id: 'cloud-top-left-1',  x: '10vw',  y: '-45vh', image: cloud1, maxDeltaY: 200, customClass: 'cloud-huge' },
+  { id: 'cloud-mid-left-1',  x: '-10vw', y: '27vh',  image: cloud2, maxDeltaY: 800,  customClass: 'cloud-medium' },
   
   // Top Right Edge Cluster
-  { id: 'cloud-top-right-1', x: '65vw',  y: '-8vh',  image: cloud2, maxDeltaY: 100, customClass: 'cloud-large' },
-  { id: 'cloud-mid-right-1', x: '80vw',  y: '15vh',  image: cloud1, maxDeltaY: 90,  customClass: 'cloud-medium' },
+  { id: 'cloud-top-right-1', x: '80vw',  y: '20vh',  image: cloud2, maxDeltaY: 800, customClass: 'cloud-large' },
+  { id: 'cloud-mid-right-1', x: '60vw',  y: '40vh',  image: cloud1, maxDeltaY: 300,  customClass: 'cloud-huge' },
   
   // Bottom Corner Framers (Move slower/less distance to maintain background baseline structure)
-  { id: 'cloud-bot-left',    x: '-5vw',  y: '40vh',  image: cloud1, maxDeltaY: 200,  customClass: 'cloud-massive' },
-  { id: 'cloud-bot-right',   x: '55vw',  y: '65vh',  image: cloud2, maxDeltaY: 450,  customClass: 'cloud-massive' },
+  { id: 'cloud-bot-left',    x: '-10vw',  y: '40vh',  image: cloud1, maxDeltaY: 900,  customClass: 'cloud-massive' },
+  { id: 'cloud-bot-right',   x: '10vw',  y: '100vh',  image: cloud2, maxDeltaY: 1000,  customClass: 'cloud-huge' },
 ];
 
 // Mobile optimized cloud positions - further apart and higher up to avoid text
 const FIXED_CLOUDS_MOBILE: CloudPosition[] = [
   // Top Left Edge Cluster - moved further left and up
-  { id: 'cloud-top-left-1',  x: '-15vw',  y: '-5vh', image: cloud1, maxDeltaY: 100, customClass: 'cloud-huge' },
-  { id: 'cloud-mid-left-1',  x: '-20vw', y: '10vh',  image: cloud2, maxDeltaY: 60,  customClass: 'cloud-medium' },
+  { id: 'cloud-top-left-1',  x: '-15vw',  y: '-5vh', image: cloud1, maxDeltaY: 135, customClass: 'cloud-huge' },
+  { id: 'cloud-mid-left-1',  x: '-20vw', y: '10vh',  image: cloud2, maxDeltaY: 80,  customClass: 'cloud-medium' },
   
   // Top Right Edge Cluster - moved further right and up
-  { id: 'cloud-top-right-1', x: '85vw',  y: '-15vh',  image: cloud2, maxDeltaY: 80, customClass: 'cloud-large' },
-  { id: 'cloud-mid-right-1', x: '95vw',  y: '5vh',  image: cloud1, maxDeltaY: 70,  customClass: 'cloud-medium' },
+  { id: 'cloud-top-right-1', x: '85vw',  y: '-15vh',  image: cloud2, maxDeltaY: 110, customClass: 'cloud-large' },
+  { id: 'cloud-mid-right-1', x: '95vw',  y: '5vh',  image: cloud1, maxDeltaY: 95,  customClass: 'cloud-huge' },
   
   // Bottom Corner Framers - adjusted for mobile spacing
-  { id: 'cloud-bot-left',    x: '-10vw',  y: '60vh',  image: cloud1, maxDeltaY: 150,  customClass: 'cloud-massive' },
-  { id: 'cloud-bot-right',   x: '70vw',  y: '10vh',  image: cloud2, maxDeltaY: 350,  customClass: 'cloud-massive' },
+  { id: 'cloud-bot-left',    x: '-10vw',  y: '60vh',  image: cloud1, maxDeltaY: 220,  customClass: 'cloud-massive' },
+  { id: 'cloud-bot-right',   x: '70vw',  y: '10vh',  image: cloud2, maxDeltaY: 520,  customClass: 'cloud-huge' },
 ];
 
 const getCloudPositions = (isMobile: boolean): CloudPosition[] => {

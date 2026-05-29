@@ -19,27 +19,30 @@
 }
 
 .hero-heading {
-  font-size: 2rem;
-  line-height: 39px;
+  font-size: 2.5rem;
+  line-height: 45px;
   font-weight: 700;
   margin: 0;
   margin-bottom: 0.75rem;
   font-family: 'Regulator Nova', sans-serif;
   font-weight: 700;
+  transform: translateY(-30px);
 }
 
 .subtext {
-	font-size: 1.25rem;
+	font-size: 1.5rem;
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
+  transform: translateY(-30px);
 }
 
 .italics {
-	font-size: 1rem;
+	font-size: 1.1rem;
 	font-style: italic;
   font-family: 'Lato', sans-serif;
   font-weight: 400;
+  transform: translateY(-30px);
 }
 
 /* Responsive design for mobile */
@@ -62,5 +65,20 @@
   
   .hero-content {
     padding: 0 1rem;
+  }
+}
+
+/* Mobile screen under 500px - move text up */
+@media (max-width: 500px) {
+  .hero-heading {
+    transform: translateY(-50px);
+  }
+  
+  .subtext {
+    transform: translateY(-50px);
+  }
+  
+  .italics {
+    transform: translateY(-50px);
   }
 }

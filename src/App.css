@@ -10,3 +10,11 @@
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
 }
+
+.block {
+  height: 20rem;
+
+  @media (max-width: 650px) {
+    height: 10rem;
+  }
+}

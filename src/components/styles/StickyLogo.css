@@ -26,7 +26,7 @@
 
 .text {
   color: var(--color-maroon);
-  font-size: 12px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 900;
   font-family: 'Regulator Nova', sans-serif;
@@ -34,18 +34,18 @@
 }
 
 .sticky-logo-image {
-  width: 120px;
-  height: 110px;
+  width: 160px;
+  height: 140px;
 }
 
 /* Desktop screens */
 @media (min-width: 769px) {
   .sticky-logo-image {
-    width: 120px;
-    height: 110px;
+    width: 160px;
+    height: 140px;
   }
   
   .text {
-    font-size: 12px;
+    font-size: 16px;
   }
 }

@@ -25,22 +25,15 @@
   object-fit: cover;
 }
 
-/* Mobile: Show middle section of castle */
-/* @media (max-width: 768px) {
-  .castle-image {
-    object-position: center;
-  }
-} */
-
 /* Desktop: Full width castle */
-/* @media (min-width: 1024px) {
+@media (min-width: 1600px) {
   .castle-image {
-    object-fit: cover;
+    object-fit: fill;
   }
-} */
+}
 
 .castle-form-overlay {
   position: absolute;
-  bottom: 10rem;
+  bottom: 11rem;
   z-index: 10;
 }

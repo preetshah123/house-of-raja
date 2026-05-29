@@ -12,6 +12,7 @@ function App() {
       <StickyLogo />
       <CloudLayer>
         <HeroSection />
+        <div className='block'></div>
         <CastleSection>
           <SignUpForm />
         </CastleSection>
