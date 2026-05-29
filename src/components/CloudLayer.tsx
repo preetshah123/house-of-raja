@@ -30,16 +30,16 @@ const FIXED_CLOUDS_DESKTOP: CloudPosition[] = [
 // Mobile optimized cloud positions - further apart and higher up to avoid text
 const FIXED_CLOUDS_MOBILE: CloudPosition[] = [
   // Top Left Edge Cluster - moved further left and up
-  { id: 'cloud-top-left-1',  x: '-15vw',  y: '-5vh', image: cloud1, maxDeltaY: 135, customClass: 'cloud-huge' },
-  { id: 'cloud-mid-left-1',  x: '-20vw', y: '10vh',  image: cloud2, maxDeltaY: 80,  customClass: 'cloud-medium' },
+  { id: 'cloud-top-left-1',  x: '-80vw',  y: '-30vh', image: cloud1, maxDeltaY: 135, customClass: 'cloud-huge-mobile' },
+  { id: 'cloud-mid-left-1',  x: '-45vw', y: '20vh',  image: cloud2, maxDeltaY: 80,  customClass: 'cloud-medium-mobile' },
   
   // Top Right Edge Cluster - moved further right and up
-  { id: 'cloud-top-right-1', x: '85vw',  y: '-15vh',  image: cloud2, maxDeltaY: 110, customClass: 'cloud-large' },
-  { id: 'cloud-mid-right-1', x: '95vw',  y: '5vh',  image: cloud1, maxDeltaY: 95,  customClass: 'cloud-huge' },
+  { id: 'cloud-top-right-1', x: '70vw',  y: '15vh',  image: cloud2, maxDeltaY: 110, customClass: 'cloud-large-mobile' },
+  { id: 'cloud-mid-right-1', x: '20vw',  y: '30vh',  image: cloud1, maxDeltaY: 95,  customClass: 'cloud-huge-mobile' },
   
   // Bottom Corner Framers - adjusted for mobile spacing
-  { id: 'cloud-bot-left',    x: '-10vw',  y: '60vh',  image: cloud1, maxDeltaY: 220,  customClass: 'cloud-massive' },
-  { id: 'cloud-bot-right',   x: '70vw',  y: '10vh',  image: cloud2, maxDeltaY: 520,  customClass: 'cloud-huge' },
+  { id: 'cloud-bot-left',    x: '-40vw',  y: '40vh',  image: cloud1, maxDeltaY: 220,  customClass: 'cloud-massive-mobile' },
+  { id: 'cloud-bot-right',   x: '-80vw',  y: '65vh',  image: cloud2, maxDeltaY: 520,  customClass: 'cloud-huge-mobile' },
 ];
 
 const getCloudPositions = (isMobile: boolean): CloudPosition[] => {

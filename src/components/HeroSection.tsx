@@ -41,7 +41,7 @@ export const HeroSection = ({ children }: HeroSectionProps) => {
 		>
       <div className="hero-content">
         <h1 className="hero-heading">
-          Your Home deserves better than beige.
+          Your home deserves better than beige.
         </h1>
         <p className="subtext">
           Indo-Western décor for homes that refuse to be basic.

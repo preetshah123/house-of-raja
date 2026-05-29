@@ -46,15 +46,15 @@
 }
 
 /* Responsive design for mobile */
-@media (max-width: 768px) {
+@media (max-width: 650px) {
   .hero-heading {
-    font-size: 1.75rem;
+    font-size: 2rem;
     line-height: 2.25rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 
   .subtext {
-    font-size: 1rem;
+    font-size: 1.43rem;
     line-height: 1.5rem;
   }
   
@@ -69,7 +69,7 @@
 }
 
 /* Mobile screen under 500px - move text up */
-@media (max-width: 500px) {
+@media (max-width: 650px) {
   .hero-heading {
     transform: translateY(-50px);
   }
@@ -79,6 +79,6 @@
   }
   
   .italics {
-    transform: translateY(-50px);
+    display: none;
   }
 }
