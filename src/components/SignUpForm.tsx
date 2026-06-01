@@ -7,7 +7,7 @@ import { useFormSubmit } from '../hooks/useFormSubmit';
 export const SignUpForm = () => {
   const [formData, setFormData] = useState<FormData>({ email: '', name: '' });
   const [validationError, setValidationError] = useState<string | null>(null);
-  const { submit, loading, error, success, reset } = useFormSubmit();
+  const { submit, loading, error, success } = useFormSubmit();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
