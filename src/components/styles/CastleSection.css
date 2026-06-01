@@ -34,11 +34,11 @@
 
 .castle-form-overlay {
   position: absolute;
-  bottom: 11rem;
+  bottom: 8rem;
   z-index: 10;
 
   @media (max-width: 650px) {
-    bottom: 14rem;
+    bottom: 10rem;
     width: 100%;
     padding: 0 3rem;
     max-width: 25rem;
