@@ -5,10 +5,18 @@
   position: relative;
   width: 100%;
   background-color: var(--color-green);
+  margin-top: -0.5rem;
+  overflow: hidden;
 }
 
 .bottom-border-image {
   width: 100%;
-  height: auto;
   display: block;
+  object-fit: cover; /* Forces the image to fill the container without shrinking its ratio */
+  object-position: center;
+
+  @media (max-width: 650px) {
+    height: 60px;
+    margin-bottom: 0;
+  }
 }
