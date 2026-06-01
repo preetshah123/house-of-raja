@@ -18,7 +18,6 @@ export const CastleSection = ({ children }: CastleSectionProps) => {
 
       // Calculate when the section starts and ends in view
       const sectionStart = sectionTop;
-      const sectionEnd = sectionTop + sectionHeight;
 
       // Calculate scroll progress relative to the section (0 = section top, 1 = section bottom)
       const scrollProgress = (scrollY - sectionStart + viewportHeight) / (sectionHeight + viewportHeight);
