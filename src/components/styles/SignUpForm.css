@@ -6,100 +6,130 @@
   max-width: 28rem;
   margin: 0 auto;
   color: var(--color-yellow);
-}
+  height: fit-content;
 
-.form-heading {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
-  padding-bottom: 1rem;
-  font-family: 'Regulator Nova', sans-serif;
-
-  @media (max-width: 500px) {
-    font-size: 1.25rem;
+  .form-subtext {
+    font-family: 'Regulator Nova', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    
+    @media (max-width: 500px) {
+      margin-top: 0.25rem;
+      font-size: 1.125rem;
+    }
   }
-}
 
-.form-group {
-  margin-bottom: 1.25rem;
-}
+  form {
 
-.form-input {
-  width: 100%;
-  padding: 0.35rem 0.75rem;
-  background-color: #fff;
-  border: none;
-  border-radius: 25px;
-  font-size: 1rem;
-  transition: all 0.3s ease-in-out;
-  color: var(--color-maroon);
-  font-weight: 700;
-}
+    @media (min-width: 1200px) {
+      padding: 0 0.75rem;
+    }
+  }
 
-.form-input::placeholder {
-  color: var(--color-green);
-  font-weight: 400 !important;
-  font-size: 0.8rem;
-}
- 
-.form-input:focus {
-  outline: none;
-  ring: 2px;
-  ring-color: var(--color-green);
-  box-shadow: 0 0 0 3px rgba(131, 141, 65, 0.1);
-}
+  .form-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
 
-.form-input:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
+  .form-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Regulator Nova', sans-serif;
+    margin: 0;
 
-.form-submit-btn {
-  width: 100%;
-  line-height: 21px;
-  background-color: var(--color-yellow);
-  border: none;
-  border-radius: 25px;
-  font-family: 'Lato', sans-serif;
-  font-style: normal;
-  font-weight: 900;
-  color: var(--color-maroon);
-  font-size: 0.75rem;
-  letter-spacing: 0px;
-  text-align: center;
-  text-indent: 0px;
-  cursor: pointer;
-}
+    @media (max-width: 500px) {
+      font-size: 1.4rem;
+    }
+  }
 
-.form-submit-btn:hover:not(:disabled) {
-  filter: brightness(0.95)
-}
+  .form-group {
+    margin-bottom: 20px;
+  }
 
-.form-submit-btn:active:not(:disabled) {
-  transform: scale(0.95);
-}
+  .form-input {
+    width: 100%;
+    padding: 0.35rem 0.75rem;
+    background-color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.75rem;
+    transition: all 0.3s ease-in-out;
+    color: var(--color-maroon);
+    font-weight: 700;
+  }
 
-.form-submit-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
+  .form-input::placeholder {
+    color: var(--color-green);
+    font-weight: 400 !important;
+    font-size: 0.8rem;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: var(--color-green);
+    box-shadow: 0 0 0 3px rgba(131, 141, 65, 0.1);
+  }
 
-.form-error {
-  padding: 0.75rem;
-  background-color: var(--color-red-100);
-  border: 1px solid var(--color-red-300);
-  border-radius: 0.5rem;
-  color: var(--color-red-800);
-  font-size: 0.875rem;
-  margin-bottom: 1rem;
-}
+  .form-input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 
-.form-success {
-  padding: 0.75rem;
-  background-color: var(--color-yellow);
-  border-radius: 0.5rem;
-  color: var(--color-green);
-  font-size: 0.875rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
+  .form-submit-btn {
+    width: 100%;
+    line-height: 28px;
+    background-color: var(--color-yellow);
+    border: none;
+    border-radius: 25px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    color: var(--color-maroon);
+    font-size: 0.75rem;
+    letter-spacing: 0px;
+    text-align: center;
+    text-indent: 0px;
+    cursor: pointer;
+
+    @media (max-width: 500px) {
+      font-size: 1rem;
+    }
+  }
+
+  .form-submit-btn:hover:not(:disabled) {
+    filter: brightness(0.95)
+  }
+
+  .form-submit-btn:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+
+  .form-submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .form-error {
+    padding: 0.75rem;
+    background-color: var(--color-red-100);
+    border: 1px solid var(--color-red-300);
+    border-radius: 0.5rem;
+    color: var(--color-red-800);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-success {
+    padding: 0.75rem;
+    background-color: var(--color-yellow);
+    border-radius: 0.5rem;
+    color: var(--color-green);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
 }

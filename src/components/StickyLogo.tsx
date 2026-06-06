@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './styles/StickyLogo.css';
-import mainLogo from '../assets/new_logo.png';
+import smallerLogo from '../assets/smaller_logo.png'
 
 export const StickyLogo = () => {
   const [transformStyles, setTransformStyles] = useState({
@@ -24,13 +24,11 @@ export const StickyLogo = () => {
       // Calculate progress ratio (0 to 1)
       const progress = Math.min(scrollY / maxScrollableDepth, 1);
 
-      const isLandScape = viewportHeight < viewportWidth
-
       // Determine max displacement based on active viewport scale 
-      const calculatedMaxTranslateY = viewportHeight * (isLandScape && isMobileScreen ? 0.15 : 0.2);
+      const calculatedMaxTranslateY = viewportHeight * (isMobileScreen ? 0.25 : 0.17);
 
       // Animation Targets 
-      const minScale = isMobileScreen ? 0.75 : 0.80;
+      const minScale = isMobileScreen ? 0.75 : 0.70;
 
       // Interpolate scale and layout drift coordinates
       const currentScale = 1 - (progress * (1 - minScale));
@@ -64,11 +62,11 @@ export const StickyLogo = () => {
         }}
       >
         <img
-          src={mainLogo}
+          src={smallerLogo}
           alt="Main Logo"
           className="sticky-logo-image"
         />
-        <span className="text">HOUSE OF RAJA</span>
+        <span className="text">HOUSE RAJA</span>
       </div>
     </div>
   );

@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem 1rem 1rem 1rem;
   flex-direction: column;
   pointer-events: auto;
   
@@ -26,26 +26,26 @@
 
 .text {
   color: var(--color-maroon);
-  font-size: 15px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 900;
   font-family: 'Regulator Nova', sans-serif;
-  margin-top: -1rem;
+  margin-top: -5px;
 }
 
 .sticky-logo-image {
-  width: 160px;
-  height: 140px;
+  width: 70px;
+  height: 70px;
 }
 
 /* Desktop screens */
 @media (min-width: 769px) {
   .sticky-logo-image {
-    width: 160px;
-    height: 140px;
+    width: 80px;
+    height: 80px;
   }
   
   .text {
-    font-size: 16px;
+    font-size: 20px;
   }
 }

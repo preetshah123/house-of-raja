@@ -7,12 +7,22 @@
   background-color: var(--color-green);
   margin-top: -0.5rem;
   overflow: hidden;
+
+  background-image: url('../../assets/full_border.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+  height: 3rem;
+  background-size: 160%;
+
+  @media (max-width: 650px) {
+    background-size: 300%;
+  }
 }
 
 .bottom-border-image {
   width: 100%;
   display: block;
-  object-fit: cover; /* Forces the image to fill the container without shrinking its ratio */
+  object-fit: cover;
   object-position: center;
 
   @media (max-width: 650px) {

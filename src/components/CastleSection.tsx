@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
 import './styles/CastleSection.css';
-import castleEntrance from '../assets/castle-entrance.png';
 import { CastleSectionProps } from '../types';
 
 export const CastleSection = ({ children }: CastleSectionProps) => {
@@ -25,7 +24,7 @@ export const CastleSection = ({ children }: CastleSectionProps) => {
       // Clamp progress between 0 and 1
       const clampedProgress = Math.max(0, Math.min(scrollProgress * 1.5, 1));
 
-      const displacement = -250 + clampedProgress * 250;
+      const displacement = -120 + clampedProgress * 250;
       setTranslateY(displacement);
     };
 
@@ -39,13 +38,7 @@ export const CastleSection = ({ children }: CastleSectionProps) => {
 
   return (
     <div className="castle-section" ref={sectionRef}>
-      <div className="castle-background">
-        <img
-          src={castleEntrance}
-          alt="castle entrance"
-          className="castle-image"
-        />
-      </div>
+      <div className="castle-background"/>
       <div
         className="castle-form-overlay"
         style={{

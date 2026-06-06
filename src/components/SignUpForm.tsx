@@ -32,13 +32,14 @@ export const SignUpForm = () => {
   return (
     <div className="signup-form-wrapper">
       <div className="form-container">
-        {/* Form Heading */}
-        <h2 className="form-heading">
-          We're not for everyone.
-          <br />
-          Get in early.
-        </h2>
-
+        <div className='form-text-wrapper'>
+          <h2 className="form-heading">
+            We're not for everyone.
+          </h2>
+          <span className='form-subtext'>
+            Get in early.
+          </span>
+        </div>
         {/* Error Messages */}
         {(validationError || error) && (
           <div className="form-error">
@@ -95,10 +96,7 @@ export const SignUpForm = () => {
               {loading ? 'Submitting...' : 'I want in.'}
             </button>
           </form>
-        )
-
-        }
-        
+        )}
       </div>
     </div>
   );
