@@ -57,6 +57,11 @@
   max-width: 999px;
 }
 
+.cloud-huge:first-of-type {
+  width: 75vw;
+  max-width: 1400px;
+}
+
 .cloud-medium-mobile { 
   width: 15rem;
   max-width: 350px;

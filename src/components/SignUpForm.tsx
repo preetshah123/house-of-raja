@@ -47,17 +47,15 @@ export const SignUpForm = () => {
           </div>
         )}
 
-        {/* Success Message */}
         {success && (
           <div className="form-success">
-            ✓ Thank you! You're in.
+            Thank you, you're in!
           </div>
         )}
 
         {/* Form */}
         {!success && !error && !validationError && (
           <form onSubmit={handleSubmit}>
-            {/* Name Input */}
             <div className="form-group">
               <input
                 id="name"

@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { type FormData, UseFormSubmitReturn } from '../types';
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzD__tDQgM8o7pF9Qg1IJhBCmVxLN-TONFzX2nYEYRPFq3vxXU3vTHlL9eXr7b5KdIoaQ/exec'
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzVBpnEorPnZ6g8gl4k424iu5mUbbtIvTEximbx8SBtbNTg1ePMPXLHgm9PdYJIBuA/exec'
 
 export const useFormSubmit = (): UseFormSubmitReturn => {
   const [loading, setLoading] = useState(false);
