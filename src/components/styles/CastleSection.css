@@ -27,7 +27,7 @@
 /* Desktop: Full width castle */
 @media (max-width: 650px) {
   .castle-background {
-    background-size: 230%;
+    background-size: 220%;
   }
 }
 
@@ -42,6 +42,6 @@
     width: 100%;
     padding: 0 3.5rem;
     max-width: 25rem;
-    top: 43%;
+    top: 37%;
   }
 }

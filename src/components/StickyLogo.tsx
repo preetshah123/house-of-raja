@@ -25,7 +25,7 @@ export const StickyLogo = () => {
       const progress = Math.min(scrollY / maxScrollableDepth, 1);
 
       // Determine max displacement based on active viewport scale 
-      const calculatedMaxTranslateY = viewportHeight * (isMobileScreen ? 0.25 : 0.17);
+      const calculatedMaxTranslateY = viewportHeight * (isMobileScreen ? 0.14 : 0.17);
 
       // Animation Targets 
       const minScale = isMobileScreen ? 0.75 : 0.70;
